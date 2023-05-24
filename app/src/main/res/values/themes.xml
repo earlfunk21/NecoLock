@@ -1,0 +1,24 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.NecoLock" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.NecoLock" parent="Base.Theme.NecoLock" />
+
+    <style name="AlertDialogCustom" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="background">@color/white</item>
+        <item name="buttonBarNegativeButtonStyle">@style/negative</item>
+        <item name="buttonBarPositiveButtonStyle">@style/positive</item>
+    </style>
+
+    <style name="positive">
+        <item name="android:textColor">@color/primary500</item>
+        <item name="android:background">@color/transparent</item>
+    </style>
+    <style name="negative">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@color/transparent</item>
+    </style>
+</resources>

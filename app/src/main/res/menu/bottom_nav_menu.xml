@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_network"
+        android:icon="@drawable/baseline_webhook_24"
+        android:title="Network"/>
+    <item
+        android:id="@+id/menu_parental_control"
+        android:icon="@drawable/baseline_group_24"
+        android:title="Parental Controls"/>
+</menu>
