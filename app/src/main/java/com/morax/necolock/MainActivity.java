@@ -61,9 +61,10 @@ public class MainActivity extends AppCompatActivity {
                         Fragment selectedFragment = null;
                         if (item.getItemId() == MENU_NETWORK) {
                             selectedFragment = NetworkFragment.newInstance(wifiName);
-                        } else if (item.getItemId() == MENU_PARENTAL_CONTROL)
-                            selectedFragment = new ParentalControlFragment();
-
+                        } else if (item.getItemId() == MENU_PARENTAL_CONTROL) {
+                            selectedFragment = ParentalControlFragment.newInstance(seconds);
+                            seconds = 0;
+                        }
                         if (selectedFragment != null) {
                             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                             transaction.replace(R.id.fragmentContainer, selectedFragment);

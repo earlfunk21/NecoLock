@@ -25,8 +25,19 @@ public class ParentalControlFragment extends Fragment {
     private List<Profile> profileList;
     private ProfileDao profileDao;
 
+    private static final String ARG_PARAM1 = "param1";
+    private long mParam1;
+
     public ParentalControlFragment() {
         // Required empty public constructor
+    }
+
+    public static ParentalControlFragment newInstance(long param1) {
+        ParentalControlFragment fragment = new ParentalControlFragment();
+        Bundle args = new Bundle();
+        args.putLong(ARG_PARAM1, param1);
+        fragment.setArguments(args);
+        return fragment;
     }
 
 
@@ -42,6 +53,9 @@ public class ParentalControlFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         profileDao = AppDatabase.getInstance(requireContext()).profileDao();
+
+        if (getArguments() != null)
+            profileDao.updateProfileList(getArguments().getLong("param1"));
         initData();
 
         RecyclerView rvProfile = view.findViewById(R.id.rv_profile);
