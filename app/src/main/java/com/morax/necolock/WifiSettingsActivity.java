@@ -49,25 +49,12 @@ public class WifiSettingsActivity extends AppCompatActivity {
 
 
         authenticationCallback = new BiometricPrompt.AuthenticationCallback() {
-            // here we need to implement two methods
-            // onAuthenticationError and
-            // onAuthenticationSucceeded If the
-            // fingerprint is not recognized by the
-            // app it will call onAuthenticationError
-            // and show a toast
             @Override
             public void onAuthenticationError(
                     int errorCode, CharSequence errString) {
                 super.onAuthenticationError(errorCode, errString);
                 notifyUser("Authentication Error : " + errString);
             }
-
-            // If the fingerprint is recognized by the
-            // app then it will call
-            // onAuthenticationSucceeded and show a
-            // toast that Authentication has Succeed
-            // Here you can also start a new activity
-            // after that
             @Override
             public void onAuthenticationSucceeded(BiometricPrompt.AuthenticationResult result) {
                 super.onAuthenticationSucceeded(result);
